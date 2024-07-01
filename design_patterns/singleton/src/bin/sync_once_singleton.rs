@@ -9,7 +9,7 @@ static INIT: Once = Once::new();
 fn main() {
     let handle1 = thread::spawn(move || {
         INIT.call_once(|| unsafe {
-            VALS =  Some(Arc::new(RefCell::new(vec![1, 2, 3, 4, 5, 6])));
+            VALS =  Some(Arc::new(RefCell::new(vec![1, 2, 3, 4, 5])));
             println!("thread1 INIT VALS: {:?}", VALS);
         });
     });
