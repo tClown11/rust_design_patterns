@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package greeter;
+
+option go_package = "grpc-demo/proto";
+
+
+service Greeter {
+  rpc SayHello (GreeterRequest) returns (GreeterResponse) {}
+}
+
+message GreeterRequest {
+  string name = 1;
+}
+
+message GreeterResponse {
+  string message = 1;
+}
